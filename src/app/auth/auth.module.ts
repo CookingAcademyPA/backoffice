@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import {LoginComponent} from "./login/login.component";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   exports: [
     LoginComponent

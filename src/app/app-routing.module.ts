@@ -5,12 +5,13 @@ import {UserDetailComponent} from './user/user-detail/user-detail.component';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {TermsComponent} from "./footer/terms/terms.component";
 import {LoginComponent} from "./auth/login/login.component";
-import {AuthGuard} from "./auth/services/auth-guard";
+import {LogoutComponent} from "./auth/logout/logout.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: DashboardComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'logout', component: LogoutComponent},
   {path: 'users', component: UserListComponent},
   {path: 'users/:id', component: UserDetailComponent},
   {path: 'terms', component: TermsComponent},

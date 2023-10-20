@@ -4,7 +4,6 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {environment} from "../../../environments/environment";
 import {UserService} from "../../services/user.service";
-import {formatNumber} from "@angular/common";
 import {User} from "../../models/user.model";
 
 @Component({
@@ -36,12 +35,12 @@ export class LoginComponent {
           }
           const userId = this.getUserId(response.token).userId;
           const admin = this.getAdmin(userId);
-          console.log(admin)
 
           if (admin.is_admin) {
             sessionStorage.setItem('token', response.token);
             sessionStorage.setItem('userId', userId);
             this.router.navigate(['/home']);
+            location.reload();
           } else {
             this.errorMessage = 'Permission denied. Only administrators can access.';
           }
