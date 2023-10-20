@@ -1,0 +1,18 @@
+.user-list {
+  padding: 20px;
+}
+
+.user-list h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.user-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.user-item:hover {
+  background-color: #f0f0f0;
+}
