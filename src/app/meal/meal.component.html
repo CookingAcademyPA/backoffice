@@ -1,0 +1,28 @@
+<div class="table-container">
+  <table class="meal-table">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let meal of meals">
+      <td>{{ meal.name }}</td>
+      <td>{{ meal.description }}</td>
+      <td>{{ meal.price | currency: 'EUR' }}</td>
+      <td>
+        <button mat-icon-button color="warn" (click)="deleteMeal(meal.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="editMeal(meal.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button mat-raised-button color="primary" (click)="addMeal()">Ajouter un Repas</button>
+</div>

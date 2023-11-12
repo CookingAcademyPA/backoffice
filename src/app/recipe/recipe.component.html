@@ -1,0 +1,27 @@
+<div class="table-container">
+  <table class="meal-table">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let recipe of recipes">
+      <td>{{ recipe.name }}</td>
+      <td>{{ recipe.description }}</td>
+      <td>
+        <button mat-icon-button color="warn" (click)="deleteRecipe(recipe.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="editRecipe(recipe.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button mat-raised-button color="primary" (click)="addRecipe()">Ajouter une Recette</button>
+</div>
+

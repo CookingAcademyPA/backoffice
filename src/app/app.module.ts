@@ -10,6 +10,11 @@ import { FooterComponent } from './footer/footer.component';
 import { TermsComponent } from './footer/terms/terms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatIconModule} from "@angular/material/icon";
+import { ProductComponent } from './product/product.component';
+import { MealComponent } from './meal/meal.component';
+import { RecipeComponent } from './recipe/recipe.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +22,19 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     DashboardComponent,
     SidebarComponent,
     FooterComponent,
-    TermsComponent
+    TermsComponent,
+    ProductComponent,
+    MealComponent,
+    RecipeComponent,
+    ServiceComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AuthModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AuthModule,
+        BrowserAnimationsModule,
+        MatIconModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

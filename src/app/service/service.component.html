@@ -1,0 +1,37 @@
+<div class="table-container">
+  <table class="meal-table">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Nombre de Personnes</th>
+      <th>Lieu</th>
+      <th>Temps</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let service of services">
+      <td>{{ service.title }}</td>
+      <td>{{ service.description }}</td>
+      <td>{{ service.price }}</td>
+      <td>{{ service.number_of_person }}</td>
+      <td>{{ service.place }}</td>
+      <td>{{ this.formatterDate(service.start_date) }}</td>
+      <td>2H</td>
+      <td>
+        <button mat-icon-button color="warn" (click)="deleteService(service.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="editService(service.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button mat-raised-button color="primary" (click)="addService()">Ajouter un Service</button>
+</div>
+
+

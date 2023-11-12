@@ -1,0 +1,28 @@
+<div class="table-container">
+  <table class="product-table">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price | currency: 'EUR' }}</td>
+      <td>
+        <button mat-icon-button color="warn" (click)="deleteProduct(product.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="editProduct(product.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button mat-raised-button color="primary" (click)="addProduct()">Ajouter un Produit</button>
+</div>
