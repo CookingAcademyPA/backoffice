@@ -10,6 +10,7 @@ import {ProductComponent} from "./product/product.component";
 import {MealComponent} from "./meal/meal.component";
 import {RecipeComponent} from "./recipe/recipe.component";
 import {ServiceComponent} from "./service/service.component";
+import {UsersComponent} from "./users/users.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path: 'service', component: ServiceComponent},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
-  {path: 'users', component: UserListComponent},
+  {path: 'users', component: UsersComponent},
   {path: 'users/:id', component: UserDetailComponent},
   {path: 'terms', component: TermsComponent},
   {path: '**', redirectTo: '/home'}

@@ -15,6 +15,7 @@ import { ProductComponent } from './product/product.component';
 import { MealComponent } from './meal/meal.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ServiceComponent } from './service/service.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ServiceComponent } from './service/service.component';
     ProductComponent,
     MealComponent,
     RecipeComponent,
-    ServiceComponent
+    ServiceComponent,
+    UsersComponent
   ],
     imports: [
         BrowserModule,

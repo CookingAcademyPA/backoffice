@@ -1,17 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from "../../models/user.model";
-import {UserService} from "../../services/user.service";
-import {Observable} from "rxjs";
-import {environment} from "../../../environments/environment";
+import { Component, OnInit } from '@angular/core';
+import {environment} from "../../environments/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
-export class UserListComponent implements OnInit {
+export class UsersComponent implements OnInit {
   private apiUrl = environment.apiUrl;
   users: any[] = [];
   private token = sessionStorage.getItem('token') || '';
