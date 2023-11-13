@@ -9,13 +9,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { TermsComponent } from './footer/terms/terms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatIconModule} from "@angular/material/icon";
 import { ProductComponent } from './product/product.component';
 import { MealComponent } from './meal/meal.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ServiceComponent } from './service/service.component';
 import { UsersComponent } from './users/users.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,15 +29,17 @@ import { UsersComponent } from './users/users.component';
     MealComponent,
     RecipeComponent,
     ServiceComponent,
-    UsersComponent
+    UsersComponent,
+    AddProductComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        AuthModule,
-        BrowserAnimationsModule,
-        MatIconModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AuthModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

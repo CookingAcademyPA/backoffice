@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {UserListComponent} from './user/user-list/user-list.component';
 import {UserDetailComponent} from './user/user-detail/user-detail.component';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {TermsComponent} from "./footer/terms/terms.component";
@@ -11,6 +10,7 @@ import {MealComponent} from "./meal/meal.component";
 import {RecipeComponent} from "./recipe/recipe.component";
 import {ServiceComponent} from "./service/service.component";
 import {UsersComponent} from "./users/users.component";
+import {AddProductComponent} from "./add-product/add-product.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -22,6 +22,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
   {path: 'users', component: UsersComponent},
+  {path: 'addProduct', component: AddProductComponent},
   {path: 'users/:id', component: UserDetailComponent},
   {path: 'terms', component: TermsComponent},
   {path: '**', redirectTo: '/home'}

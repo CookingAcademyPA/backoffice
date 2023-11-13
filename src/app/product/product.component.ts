@@ -42,14 +42,8 @@ export class ProductComponent implements OnInit {
     )
   }
 
-  editProduct(productId: number): void {
-    // Implémentez ici la logique pour éditer le produit avec l'ID donné
-    // Redirigez l'utilisateur vers la page d'édition du produit
-  }
   addProduct(): void {
-    // Implémentez ici la logique pour ajouter un produit
-    // Redirigez l'utilisateur vers la page d'ajout de produit
-    this.router.navigate(['/home']);
+    this.router.navigate(['/addProduct']);
   }
 
 }
