@@ -32,24 +32,14 @@ export class RecipeComponent implements OnInit {
     );
   }
   deleteRecipe(RecipeId: number): void {
-    // Implémentez ici la logique pour supprimer le produit avec l'ID donné
-    // Envoyez une requête HTTP DELETE au backend
-    // Rafraîchissez la liste des produits après la suppression
     this.http.delete(`${this.apiUrl}/recipes/${RecipeId}`, {headers: this.header}).subscribe(
       (data: any) => {
         this.getAllRecipes();
       }
     )
   }
-
-  editRecipe(RecipeId: number): void {
-    // Implémentez ici la logique pour éditer le produit avec l'ID donné
-    // Redirigez l'utilisateur vers la page d'édition du produit
-  }
   addRecipe(): void {
-    // Implémentez ici la logique pour ajouter un produit
-    // Redirigez l'utilisateur vers la page d'ajout de produit
-    this.router.navigate(['/home']);
+    this.router.navigate(['/addRecipe']);
   }
 
 }

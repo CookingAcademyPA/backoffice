@@ -34,23 +34,15 @@ export class ServiceComponent implements OnInit {
   }
 
   deleteService(ServiceId: number): void {
-    // Implémentez ici la logique pour supprimer le produit avec l'ID donné
-    // Envoyez une requête HTTP DELETE au backend
-    // Rafraîchissez la liste des produits après la suppression
     this.http.delete(`${this.apiUrl}/services/${ServiceId}`, {headers: this.header}).subscribe(
       (data: any) => {
         this.getAllServices();
       }
     )
   }
-  editService(ServiceId: number): void {
-    // Implémentez ici la logique pour éditer le produit avec l'ID
-  }
 
   addService(): void {
-    // Implémentez ici la logique pour ajouter un service
-    // Redirigez l'utilisateur vers la page d'ajout de service
-    this.router.navigate(['/home']);
+    this.router.navigate(['/addService']);
   }
 
   formatterDate(dateString: string): string {

@@ -18,6 +18,8 @@ import { UsersComponent } from './users/users.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import {FormsModule} from "@angular/forms";
 import { AddMealComponent } from './add-meal/add-meal.component';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { AddServiceComponent } from './add-service/add-service.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AddMealComponent } from './add-meal/add-meal.component';
     ServiceComponent,
     UsersComponent,
     AddProductComponent,
-    AddMealComponent
+    AddMealComponent,
+    AddRecipeComponent,
+    AddServiceComponent
   ],
   imports: [
     BrowserModule,
