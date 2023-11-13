@@ -17,6 +17,7 @@ import { ServiceComponent } from './service/service.component';
 import { UsersComponent } from './users/users.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import {FormsModule} from "@angular/forms";
+import { AddMealComponent } from './add-meal/add-meal.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FormsModule} from "@angular/forms";
     RecipeComponent,
     ServiceComponent,
     UsersComponent,
-    AddProductComponent
+    AddProductComponent,
+    AddMealComponent
   ],
   imports: [
     BrowserModule,

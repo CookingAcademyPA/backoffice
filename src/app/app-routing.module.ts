@@ -11,6 +11,7 @@ import {RecipeComponent} from "./recipe/recipe.component";
 import {ServiceComponent} from "./service/service.component";
 import {UsersComponent} from "./users/users.component";
 import {AddProductComponent} from "./add-product/add-product.component";
+import {AddMealComponent} from "./add-meal/add-meal.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'logout', component: LogoutComponent},
   {path: 'users', component: UsersComponent},
   {path: 'addProduct', component: AddProductComponent},
+  {path: 'addMeal', component: AddMealComponent},
   {path: 'users/:id', component: UserDetailComponent},
   {path: 'terms', component: TermsComponent},
   {path: '**', redirectTo: '/home'}

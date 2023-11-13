@@ -4,19 +4,18 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  selector: 'app-add-meal',
+  templateUrl: './add-meal.component.html',
+  styleUrls: ['./add-meal.component.css']
 })
-export class AddProductComponent implements OnInit {
+export class AddMealComponent implements OnInit {
   private apiUrl = environment.apiUrl;
-  products: any[] = [];
   private token = sessionStorage.getItem('token') || '';
   private header = new HttpHeaders()
     .set('Authorization', this.token)
     .set('Content-Type', 'application/json');
 
-  product = {
+  meal = {
     name: '',
     description: '',
     price: 0
@@ -26,12 +25,13 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addProduct(): void {
-    this.http.post(`${this.apiUrl}/products`, {name: this.product.name, description: this.product.description, price: this.product.price}, {headers: this.header}).subscribe({
+  addMeal(): void {
+    this.http.post(`${this.apiUrl}/meals`, {name: this.meal.name, description: this.meal.description, price: this.meal.price}, {headers: this.header}).subscribe({
       next: (data) => {
-        this.router.navigate(['/product']);
+        this.router.navigate(['/meal']);
         console.log(data);
       },
     })
   }
+
 }

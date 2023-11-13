@@ -32,9 +32,6 @@ export class MealComponent implements OnInit {
   }
 
   deleteMeal(mealId: number): void {
-    // Implémentez ici la logique pour supprimer le produit avec l'ID donné
-    // Envoyez une requête HTTP DELETE au backend
-    // Rafraîchissez la liste des produits après la suppression
     this.http.delete(`${this.apiUrl}/meals/${mealId}`, {headers: this.header}).subscribe(
       (data: any) => {
         this.getAllMeals();
@@ -42,14 +39,8 @@ export class MealComponent implements OnInit {
     )
   }
 
-  editMeal(mealId: number): void {
-    // Implémentez ici la logique pour éditer le produit avec l'ID donné
-    // Redirigez l'utilisateur vers la page d'édition du produit
-  }
   addMeal(): void {
-    // Implémentez ici la logique pour ajouter un produit
-    // Redirigez l'utilisateur vers la page d'ajout de produit
-    this.router.navigate(['/home']);
+    this.router.navigate(['/addMeal']);
   }
 
 }
