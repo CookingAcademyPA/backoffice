@@ -8,13 +8,16 @@ import {Router} from "@angular/router";
 })
 export class AppComponent implements OnInit {
   title = 'cookingacademy-bo';
-
-  isLogged = sessionStorage.getItem('token') !== null;
-
   constructor(private router: Router) {}
 
+  isLogged: boolean = false;
+
   ngOnInit(): void {
-    console.log(sessionStorage.getItem('token'))
+    this.isLogged = sessionStorage.getItem('token') !== null;
+    console.log(`isLogged ${this.isLogged}`);
+    if (!this.isLogged) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }

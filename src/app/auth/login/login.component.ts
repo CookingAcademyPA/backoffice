@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from "../services/auth.service";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
@@ -18,7 +18,11 @@ export class LoginComponent {
   errorMessage!: string;
   admin!: User;
 
-  constructor(private router: Router, private http: HttpClient, private authService: AuthService, private userService: UserService) {
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private authService: AuthService,
+    private userService: UserService) {
   }
 
   onSubmit(): void {
@@ -34,21 +38,21 @@ export class LoginComponent {
             return;
           }
           const userId = this.getUserId(response.token).userId;
-          const admin = this.getAdmin(userId);
+          this.userService.getAdminById(userId).subscribe(user => {
+            this.admin = user;
 
-          if (admin.is_admin) {
-            sessionStorage.setItem('token', response.token);
-            sessionStorage.setItem('userId', userId);
-            this.router.navigate(['/home']);
-            location.reload();
-          } else {
-            this.errorMessage = 'Permission denied. Only administrators can access.';
-          }
-
+            if (this.admin && this.admin.is_admin) {
+              sessionStorage.setItem('token', response.token);
+              sessionStorage.setItem('userId', userId);
+              this.router.navigate(['/home']);
+              location.reload();
+            } else {
+              this.errorMessage = 'Permission denied. Only administrators can access.';
+            }
+          });
         },
         (error) => {
           this.errorMessage = 'Connection error. Verify your informations';
-          console.error('Erreur de connexion :', error);
         }
       );
   }
@@ -57,14 +61,6 @@ export class LoginComponent {
     this.authService.setToken(token);
     this.authService.decodeToken();
     return this.authService.getUserId();
-  }
-
-  getAdmin(id: string): User {
-    this.userService.getAdminById(id).subscribe(user => {
-        this.admin = user;
-      }
-    );
-    return this.admin;
   }
 
 }

@@ -22,3 +22,12 @@
 .sidebar a:hover {
   text-decoration: underline;
 }
+
+.logout-button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+

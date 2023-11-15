@@ -14,22 +14,23 @@ import {AddProductComponent} from "./add-product/add-product.component";
 import {AddMealComponent} from "./add-meal/add-meal.component";
 import {AddRecipeComponent} from "./add-recipe/add-recipe.component";
 import {AddServiceComponent} from "./add-service/add-service.component";
+import {AuthGuard} from "./auth/services/auth.guard";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: DashboardComponent},
-  {path: 'product', component: ProductComponent},
-  {path: 'meal', component: MealComponent},
-  {path: 'recipe', component: RecipeComponent},
-  {path: 'service', component: ServiceComponent},
+  {path: 'product', canActivate: [AuthGuard], component: ProductComponent},
+  {path: 'meal', canActivate: [AuthGuard], component: MealComponent},
+  {path: 'recipe', canActivate: [AuthGuard], component: RecipeComponent},
+  {path: 'service', canActivate: [AuthGuard], component: ServiceComponent},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
-  {path: 'users', component: UsersComponent},
-  {path: 'addProduct', component: AddProductComponent},
-  {path: 'addMeal', component: AddMealComponent},
-  {path: 'addRecipe', component: AddRecipeComponent},
-  {path: 'addService', component: AddServiceComponent},
-  {path: 'users/:id', component: UserDetailComponent},
+  {path: 'users', canActivate: [AuthGuard], component: UsersComponent},
+  {path: 'addProduct', canActivate: [AuthGuard], component: AddProductComponent},
+  {path: 'addMeal', canActivate: [AuthGuard], component: AddMealComponent},
+  {path: 'addRecipe', canActivate: [AuthGuard], component: AddRecipeComponent},
+  {path: 'addService', canActivate: [AuthGuard], component: AddServiceComponent},
+  {path: 'users/:id', canActivate: [AuthGuard], component: UserDetailComponent},
   {path: 'terms', component: TermsComponent},
   {path: '**', redirectTo: '/home'}
 ];

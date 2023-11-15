@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import decode from 'jwt-decode';
+import {environment} from "../../../environments/environment";
+import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +12,9 @@ export class AuthService {
   tokenInfos! : { [key: string]: string };
   private jwtToken!: string;
 
-  constructor() { }
+  API_URL = environment.apiUrl;
+
+  constructor(private http: HttpClient, private router: Router) { }
 
   setToken(token: string): void {
     this.jwtToken = token;
@@ -42,5 +47,13 @@ export class AuthService {
 
   isLoggedIn() {
     return sessionStorage.getItem('token') !== null;
+  }
+
+  clearSession() {
+    this.http.get(`${this.API_URL}/auth/logout`).subscribe(data => {
+      sessionStorage.removeItem('token');
+      sessionStorage.removeItem('userId');
+      this.router.navigate(['/login']);
+    });
   }
 }

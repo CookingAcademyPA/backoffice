@@ -15,11 +15,7 @@ export class LogoutComponent implements OnInit {
 
   // to modify into button and remove link
   ngOnInit(): void {
-    this.http.get(`${this.API_URL}/auth/logout`).subscribe(data => {
-      sessionStorage.clear();
-      this.router.navigate(['/']);
-      location.reload();
-    });
+
   }
 
 }
